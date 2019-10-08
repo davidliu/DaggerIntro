@@ -11,7 +11,7 @@ class Car @Inject constructor(val wheels: Wheels)
 @Component
 interface InjectedCarComponent {
     // Objects with @Inject constructors can be created without explicit resolution.
-    // This will essentially give you a new Car(Wheels())
+    // This will just straight up give you a new Car(Wheels())
     fun giveMeACar(): Car
 }
 

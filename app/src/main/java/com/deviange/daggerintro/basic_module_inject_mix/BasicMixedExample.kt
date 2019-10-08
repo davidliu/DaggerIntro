@@ -18,5 +18,8 @@ class WheelsModule {
 interface WheeledCarComponent {
     // While Car isn't registered through a Module, it has an inject constructor.
     // It requires a Wheels object, which will be gotten through WheelsModule.
+    //
+    // Note that since Wheels doesn't have an @Inject constructor,
+    // it needs to be explicitly provided by a Module.
     fun giveMeACar(): Car
 }
