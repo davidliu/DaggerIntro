@@ -1,7 +1,5 @@
 package com.deviange.daggerintro.basic_module_dependency
 
-import com.deviange.daggerintro.basic_module.Car
-import com.deviange.daggerintro.basic_module.CarModule
 import dagger.Component
 import dagger.Module
 import dagger.Provides
