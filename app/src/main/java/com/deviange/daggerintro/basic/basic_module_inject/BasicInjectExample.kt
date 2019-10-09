@@ -1,4 +1,4 @@
-package com.deviange.daggerintro.basic_module_inject
+package com.deviange.daggerintro.basic.basic_module_inject
 
 import dagger.Component
 import dagger.Module

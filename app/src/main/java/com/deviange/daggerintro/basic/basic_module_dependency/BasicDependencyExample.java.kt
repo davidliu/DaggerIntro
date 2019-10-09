@@ -1,4 +1,4 @@
-package com.deviange.daggerintro.basic_module_dependency
+package com.deviange.daggerintro.basic.basic_module_dependency
 
 import dagger.Component
 import dagger.Module
@@ -18,7 +18,8 @@ class CarModule {
     // Note that wheels isn't provided within the CarModule.
     // It's resolved at the the Component level.
     @Provides
-    fun providesCar(wheels: Wheels) = Car(wheels)
+    fun providesCar(wheels: Wheels) =
+        Car(wheels)
 }
 
 @Component(modules = [CarModule::class, WheelsModule::class])

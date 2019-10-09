@@ -1,4 +1,4 @@
-package com.deviange.daggerintro.basic_subcomponent
+package com.deviange.daggerintro.composition.basic_subcomponent
 
 import android.app.Activity
 import dagger.Component
