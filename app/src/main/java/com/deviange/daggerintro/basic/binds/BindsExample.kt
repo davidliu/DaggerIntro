@@ -1,14 +1,16 @@
-package com.deviange.daggerintro.basic.binds_instance
+package com.deviange.daggerintro.basic.binds
 
-import dagger.BindsInstance
+import dagger.Binds
 import dagger.Component
 import dagger.Module
+import dagger.Provides
 
 open class Wheels
 class FireWheels : Wheels()
 
 @Module
 class FireWheelsModule {
+    @Provides
     fun provideFireWheels(): FireWheels {
         return FireWheels()
     }
@@ -21,13 +23,12 @@ abstract class WheelsModule {
      * @Provides
      * fun provideWheels(fire: FireWheels) = fire as Wheels
      */
-    @BindsInstance
-    abstract fun provideWheels(fire: FireWheels): Wheels
+    @Binds
+    abstract fun castThoseWheels(fire: FireWheels): Wheels
 }
 
 
-@Component(modules = [WheelsModule::class])
+@Component(modules = [WheelsModule::class, FireWheelsModule::class])
 interface Component {
-    // Will error, since it doesn't know FireWheels are Wheels.
     fun giveMeSomeWheels(): Wheels
 }
