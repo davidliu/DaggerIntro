@@ -18,8 +18,8 @@ interface ThingComponent {
 }
 /*
 /**
- * This will error, since Dagger does not process super classes for annotations
- *
+ * This will error, since Dagger does not process super classes for annotations.
+ * That is, InheritingComponent does not inherit the ThingModule.
  * Only the [ThingComponent.giveMeAThing] method is inherited.
  */
 
