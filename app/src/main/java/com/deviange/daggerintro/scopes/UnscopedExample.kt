@@ -3,6 +3,7 @@ package com.deviange.daggerintro.scopes
 import dagger.Component
 import dagger.Module
 import dagger.Provides
+import javax.inject.Provider
 
 @Module
 class UnscopedModule {
@@ -15,4 +16,6 @@ class UnscopedModule {
 @Component(modules = [UnscopedModule::class])
 interface UnscopedComponent {
     fun giveMeIncrement(): Int
+    fun incrementProvider(): Provider<Int>
+    fun incrementLazy(): dagger.Lazy<Int>
 }

@@ -25,5 +25,16 @@ class MainActivity : AppCompatActivity() {
         for (i in 1..10) {
             Log.e("Reusable", reusableComponent.giveMeIncrement().toString())
         }
+
+        val unscopedProvider = unscopedComponent.incrementProvider()
+        val unscopedLazy = unscopedComponent.incrementLazy()
+
+        for (i in 1..10) {
+            Log.e("Unscoped Provider", unscopedProvider.get().toString())
+        }
+        for (i in 1..10) {
+            Log.e("Unscoped Lazy", unscopedLazy.get().toString())
+        }
+
     }
 }

@@ -3,6 +3,7 @@ package com.deviange.daggerintro.scopes
 import dagger.Component
 import dagger.Module
 import dagger.Provides
+import javax.inject.Provider
 import javax.inject.Singleton
 
 @Module
@@ -11,11 +12,13 @@ class ScopedModule {
 
     @Singleton
     @Provides
-    fun provideIncrement() = increment++
+    fun provideIncrement(): Int = increment++
 }
 
 @Singleton
 @Component(modules = [ScopedModule::class])
 interface ScopedComponent {
     fun giveMeIncrement(): Int
+    fun incrementProvider(): Provider<Int>
+    fun incrementLazy(): dagger.Lazy<Int>
 }
