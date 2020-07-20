@@ -9,6 +9,9 @@ import javax.inject.Provider
 class UnscopedModule {
     var increment = 0
 
+    /**
+     * Since this is unscoped, every time an Int is requested, the provides method will be called.
+     */
     @Provides
     fun provideIncrement() = increment++
 }
