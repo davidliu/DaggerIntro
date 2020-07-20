@@ -10,6 +10,10 @@ import javax.inject.Singleton
 class ScopedModule {
     var increment = 0
 
+    /**
+     * Scopes are like a synchronized lazy; once provided, the same value
+     * will be provided every time, and the provide method won't be called again.
+     */
     @Singleton
     @Provides
     fun provideIncrement(): Int = increment++
