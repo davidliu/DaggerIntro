@@ -34,6 +34,11 @@ class ActivityModule {
 
 @Subcomponent(modules = [ActivityModule::class])
 interface ActivitySubcomponent {
+    /**
+     * Subcomponents inherit all of the provisions from their parent components.
+     * In this case, ActivitySubcomponent inherits the ability to produce Api, 
+     * which is needed to construct Tracker.
+     */
     fun giveMeATracker(): Tracker
 
     @Subcomponent.Factory
