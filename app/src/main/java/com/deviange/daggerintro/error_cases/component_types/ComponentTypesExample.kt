@@ -16,5 +16,7 @@ class WheelsModule {
 //@Component(modules = [WheelsModule::class])
 interface Component {
     // Will error, since it doesn't know FireWheels are Wheels.
+    // Dagger is strict about types, so it only sees FireWheels as FireWheels.
+    // A @Binds or @Provides method is needed in a module to cast it to Wheels.
     fun giveMeSomeWheels(): Wheels
 }
